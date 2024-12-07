@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tracking_id/dashboard.dart';
+import 'package:tracking_id/view/screens/dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

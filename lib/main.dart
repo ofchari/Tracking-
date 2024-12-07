@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:tracking_id/login.dart';
+import 'package:tracking_id/view/screens/login.dart';
 
 void main() {
   Intl.defaultLocale = 'en_US';

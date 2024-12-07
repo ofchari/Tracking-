@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
-import 'package:tracking_id/tracking_report.dart';
+import 'package:tracking_id/view/screens/tracking_report.dart';
 
 class TrackingData extends StatefulWidget {
   const TrackingData({super.key});
