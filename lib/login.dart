@@ -88,14 +88,15 @@ class _LoginState extends State<Login> {
                 padding:  const EdgeInsets.only(right: 180.0),
                 child: Text("Login Now",style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w500,color: Colors.yellow)),),
               ),
-              SizedBox(height: 20.h,),
+              SizedBox(height: 30.h,),
               SizedBox(
                 height: 60.h,
-                width: 400.w,
+                width: 370.w,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: TextFormField(
                     controller: _usernameController,
+                    style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w500,color: Colors.white)),
                     decoration: InputDecoration(
                       labelText: "   Username",
                       labelStyle: GoogleFonts.sora(
@@ -118,15 +119,16 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
-              SizedBox(height: 12.h),
+              SizedBox(height: 15.h),
               SizedBox(
                 height: 60.h,
-                width: 400.w,
+                width: 370.w,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: TextFormField(
                     controller: _passwordController,
                     obscureText: true,
+                    style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w500,color: Colors.white)),
                     decoration: InputDecoration(
                       labelText: "   Password",
                       labelStyle: GoogleFonts.sora(
