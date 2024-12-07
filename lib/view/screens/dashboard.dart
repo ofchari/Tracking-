@@ -8,6 +8,7 @@ import 'package:tracking_id/view/screens/tracking_report.dart';
 
 import 'login.dart';
 
+
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -27,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    /// Define sizes //
+     /// Define Sizes //
     var size = MediaQuery.of(context).size;
     height = size.height;
     width = size.width;
@@ -51,7 +52,7 @@ class _DashboardState extends State<Dashboard> {
               textStyle: TextStyle(
                   fontSize: 17.sp, fontWeight: FontWeight.w500, color: Colors.white)),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         centerTitle: true,
         actions: [
           GestureDetector(

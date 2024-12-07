@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tracking_id/main.dart';
 
 class Buttons extends StatefulWidget {
   const Buttons({super.key,required this.height,required this.width,required this.color,required this.radius,required this.text});

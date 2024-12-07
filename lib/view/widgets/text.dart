@@ -3,9 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyText extends StatefulWidget {
-  const MyText({super.key,required this.text,required this.weight});
+  const MyText({super.key,required this.text,required this.weight,required this.color});
   final String text;
   final FontWeight weight;
+  final Color color;
 
   @override
   State<MyText> createState() => _MyTextState();
@@ -14,6 +15,6 @@ class MyText extends StatefulWidget {
 class _MyTextState extends State<MyText> {
   @override
   Widget build(BuildContext context) {
-    return Text(widget.text,style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w500)),);
+    return Text(widget.text,style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w500,color: widget.color)),);
   }
 }

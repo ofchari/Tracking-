@@ -18,6 +18,7 @@ class _TrackingDataState extends State<TrackingData> {
   late double height;
   late double width;
 
+
   final TextEditingController _dateController = TextEditingController();
   final TextEditingController _fromTimeController = TextEditingController();
   final TextEditingController _toTimeController = TextEditingController();
@@ -46,13 +47,18 @@ class _TrackingDataState extends State<TrackingData> {
   Widget _smallBuildLayout() {
     return Scaffold(
       appBar: AppBar(
+        leading: GestureDetector(
+            onTap: (){
+              Get.back();
+            },
+            child: const Icon(Icons.arrow_back,color: Colors.white,)),
         title: Text(
-          "Tracking Id",
+          "Tracking",
           style: GoogleFonts.dmSans(
             textStyle: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w500, color: Colors.white),
           ),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         centerTitle: true,
       ),
       body: SizedBox(

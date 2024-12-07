@@ -117,9 +117,14 @@ class _TrackingReportState extends State<TrackingReport> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+            child: const Icon(Icons.arrow_back,color: Colors.white,)),
         title: Text("Tracking Reports",
             style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w500, color: Colors.white))),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         centerTitle: true,
       ),
       body: Column(
