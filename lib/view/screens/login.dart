@@ -36,7 +36,7 @@ class _LoginState extends State<Login> {
     }
   }
 
-  /// Handle login validation
+    /// Handle login validation
   Future<void> _handleLogin() async {
     String username = _usernameController.text.trim();
     String password = _passwordController.text.trim();
@@ -174,96 +174,6 @@ class _LoginState extends State<Login> {
                 ),
               ),
 
-              // SizedBox(
-              //   height: 60.h,
-              //   width: 370.w,
-              //   child: Padding(
-              //     padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-              //     child: TextFormField(
-              //       controller: _usernameController,
-              //       style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w500,color: Colors.white)),
-              //       decoration: InputDecoration(
-              //         labelText: "   Username",
-              //         labelStyle: GoogleFonts.sora(
-              //           fontSize: 13.sp,
-              //           fontWeight: FontWeight.w500,
-              //           color: Colors.black,
-              //         ),
-              //         prefixIcon: const Icon(
-              //           Icons.person,
-              //           color: Colors.black,
-              //           size: 20,
-              //         ),
-              //         enabledBorder: OutlineInputBorder(
-              //           borderSide: const BorderSide(
-              //             color: Colors.black
-              //           ),
-              //           borderRadius: BorderRadius.circular(23)
-              //         )
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              // SizedBox(height: 15.h),
-              // SizedBox(
-              //   height: 60.h,
-              //   width: 370.w,
-              //   child: Padding(
-              //     padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-              //     child: TextFormField(
-              //       controller: _passwordController,
-              //       obscureText: true,
-              //       style: GoogleFonts.dmSans(textStyle: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w500,color: Colors.white)),
-              //       decoration: InputDecoration(
-              //         labelText: "   Password",
-              //         labelStyle: GoogleFonts.sora(
-              //           fontSize: 13.sp,
-              //           fontWeight: FontWeight.w500,
-              //           color: Colors.black,
-              //         ),
-              //         enabledBorder: OutlineInputBorder(
-              //           borderSide: const BorderSide(
-              //             color: Colors.black,
-              //           ),
-              //           borderRadius: BorderRadius.circular(23)
-              //         ),
-              //         prefixIcon: const Icon(
-              //           Icons.lock,
-              //           color: Colors.black,
-              //           size: 20,
-              //         ),
-              //         // border: OutlineInputBorder(
-              //         //   borderSide: BorderSide(
-              //         //     color: Colors.white
-              //         //   ),
-              //         //   borderRadius: BorderRadius.circular(23),
-              //         // ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              // const SizedBox(height: 20),
-              // GestureDetector(
-              //   onTap: _handleLogin,
-              //   child: Container(
-              //     height: 40.h,
-              //     width: 270.w,
-              //     decoration: BoxDecoration(
-              //       color: Colors.blueAccent,
-              //       borderRadius: BorderRadius.circular(27),
-              //     ),
-              //     child: Center(
-              //       child: Text(
-              //         'Submit',
-              //         style: GoogleFonts.sora(
-              //           fontSize: 13.sp,
-              //           fontWeight: FontWeight.w500,
-              //           color: Colors.white,
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),

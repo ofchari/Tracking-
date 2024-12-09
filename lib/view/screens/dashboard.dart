@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tracking_id/view/screens/tracking_data.dart';
 import 'package:tracking_id/view/screens/tracking_report.dart';
-
 import 'login.dart';
 
 
@@ -20,9 +19,13 @@ class _DashboardState extends State<Dashboard> {
   late double height;
   late double width;
 
+
   Future<void> _logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.clear();
+    // Set 'isLoggedIn' to false to indicate the user is logged out
+    await prefs.setBool('isLoggedIn', false);
+
+    // Redirect to the login screen
     Get.offAll(() => const Login());
   }
 
@@ -57,7 +60,7 @@ class _DashboardState extends State<Dashboard> {
         actions: [
           GestureDetector(
             onTap: (){
-              _logout();
+             _logout();
             },
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -132,7 +135,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
               )
-          
+
             ],
           ),
         ),

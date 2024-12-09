@@ -18,12 +18,23 @@ class _TrackingDataState extends State<TrackingData> {
   late double height;
   late double width;
 
-
   final TextEditingController _dateController = TextEditingController();
   final TextEditingController _fromTimeController = TextEditingController();
   final TextEditingController _toTimeController = TextEditingController();
-  final TextEditingController _locationController = TextEditingController();
   final TextEditingController _remarksController = TextEditingController();
+  final TextEditingController _customLocationController = TextEditingController();
+
+  String? _selectedLocation; // For storing the selected location
+  bool _showCustomLocationField = false; // Flag for showing/hiding custom location field
+
+  final List<String> _locations = [
+    'TvK Nagar',
+    'Friends',
+    'Movies',
+    'Boyams',
+    'Grove',
+    'Others'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +59,10 @@ class _TrackingDataState extends State<TrackingData> {
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
-            onTap: (){
+            onTap: () {
               Get.back();
             },
-            child: const Icon(Icons.arrow_back,color: Colors.white,)),
+            child: const Icon(Icons.arrow_back, color: Colors.white)),
         title: Text(
           "Tracking",
           style: GoogleFonts.dmSans(
@@ -79,7 +90,26 @@ class _TrackingDataState extends State<TrackingData> {
                 }
               }),
               SizedBox(height: 20.h),
-              _buildTextField("   Location", Icons.location_on_outlined, _locationController),
+              _buildDropdownField(),
+              if (_showCustomLocationField)
+                Padding(
+                  padding:   const EdgeInsets.only(right: 12.0,top: 5.0,left: 12.0),
+                  child: TextFormField(
+                    controller: _customLocationController,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.location_on_outlined),
+                      labelText: "Enter custom location",
+                      labelStyle: GoogleFonts.dmSans(
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
               SizedBox(height: 20.h),
               _buildTextField("   From Time", Icons.alarm, _fromTimeController, isReadOnly: true, onTap: () async {
                 TimeOfDay? pickedTime = await showTimePicker(context: context, initialTime: TimeOfDay.now());
@@ -99,9 +129,11 @@ class _TrackingDataState extends State<TrackingData> {
               SizedBox(height: 20.h),
               GestureDetector(
                 onTap: () async {
+                  String location = _selectedLocation == 'Others' ? _customLocationController.text : _selectedLocation ?? "";
+
                   var newData = {
                     "date": _dateController.text,
-                    "location": _locationController.text,
+                    "location": location,
                     "fromTime": _fromTimeController.text,
                     "toTime": _toTimeController.text,
                     "remarks": _remarksController.text,
@@ -127,6 +159,42 @@ class _TrackingDataState extends State<TrackingData> {
                 ),
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDropdownField() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: DropdownButtonFormField<String>(
+        value: _selectedLocation,
+        // icon: Icon(Icons.location_on_outlined),
+        items: _locations.map((location) {
+          return DropdownMenuItem(
+            value: location,
+            child: Text(
+              location,
+              style: GoogleFonts.dmSans(fontSize: 15.sp, fontWeight: FontWeight.w500, color: Colors.black),
+            ),
+          );
+        }).toList(),
+        onChanged: (value) {
+          setState(() {
+            _selectedLocation = value;
+            _showCustomLocationField = value == 'Others';
+          });
+        },
+        decoration: InputDecoration(
+          labelText: "   Location",
+          labelStyle: GoogleFonts.dmSans(
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
           ),
         ),
       ),
